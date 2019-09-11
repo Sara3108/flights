@@ -1,0 +1,34 @@
+<button (click)="flightType($event.target.value)" value="one-way">One way</button>
+<button (click)="flightType($event.target.value)" value="round-trip">round trip</button>
+<button (click)="flightType($event.target.value)" value="multi-city">multi city</button>
+<br>
+
+<form [formGroup]="form">
+    <div formArrayName="multi" *ngFor="let item of form.get('multi').controls; let i = index;">
+            <div [formGroupName]="i">
+
+        <input formControlName="origin" type="text" placeholder="origin">
+        <input formControlName="dist" type="text" placeholder="destination" *ngIf="fType=='round-trip'">
+        <input formControlName="date" type="date">
+        </div>
+    </div>
+    <input formControlName="a" type="text" placeholder="ay 7aga">
+    <button (click)="search()">search</button>
+    <br>
+    <button (click)="addFlight()" *ngIf="fType=='multi-city'">add</button>
+
+</form>
+
+<!-- ----- -->
+<!-- <form [formGroup]="orderForm">
+    <div formArrayName="items" *ngFor="let item of orderForm.get('items').controls; let i = index;">
+        <div [formGroupName]="i">
+            <input formControlName="name" placeholder="Item name">
+            <input formControlName="description" placeholder="Item description">
+            <input formControlName="price" placeholder="Item price">
+        </div>
+        Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }}
+    </div>
+    <button (click)="addItem()">add</button>
+
+</form> -->
