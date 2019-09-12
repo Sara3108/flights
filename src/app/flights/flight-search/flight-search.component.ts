@@ -8,10 +8,9 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
   styleUrls: ['./flight-search.component.css']
 })
 export class FlightSearchComponent implements OnInit {
-  fType: string;
+  fType: string="one-way";
   form: FormGroup;
   multi:FormArray;
-  tab:string="one-way";
 
   constructor(private fb: FormBuilder) {
     this.form = fb.group({

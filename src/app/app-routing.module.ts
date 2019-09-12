@@ -11,11 +11,11 @@ const routes: Routes = [
     path: 'orders',
     loadChildren: () => import('./hotels/hotels.module').then(mod => mod.HotelsModule)
   },
-  {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
-  }
+  // {
+  //   path: '',
+  //   redirectTo: '',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({
