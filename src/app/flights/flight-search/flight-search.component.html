@@ -1,6 +1,6 @@
-<button (click)="flightType($event.target.value)" value="one-way">One way</button>
-<button (click)="flightType($event.target.value)" value="round-trip">round trip</button>
-<button (click)="flightType($event.target.value)" value="multi-city">multi city</button>
+<button [ngClass]="{'active': fType ==='one-way'}" (click)="flightType($event.target.value)" value="one-way">One way</button>
+<button [ngClass]="{'active': fType ==='round-trip'}" (click)="flightType($event.target.value)" value="round-trip">round trip</button>
+<button [ngClass]="{'active': fType ==='multi-city'}" (click)="flightType($event.target.value)" value="multi-city">multi city</button>
 <br>
 
 <form [formGroup]="form">

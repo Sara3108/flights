@@ -11,6 +11,7 @@ export class FlightSearchComponent implements OnInit {
   fType: string;
   form: FormGroup;
   multi:FormArray;
+  tab:string="one-way";
 
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
@@ -37,6 +38,7 @@ export class FlightSearchComponent implements OnInit {
 
   flightType(e) {
     this.fType = e;
+    
   }
 
   search(){
